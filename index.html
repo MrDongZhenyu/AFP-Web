@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Analytic Fourier ptychotomography for volumetric refractive index imaging">
+  <meta name="keywords" content="refractive index tomography, volumetric imaging, ptychotomography, analytic, AFP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AFP</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="./static/css/style.css"> -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/Tomography.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Load model-viewer library -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Analytic Fourier ptychotomography (AFP) for volumetric refractive index imaging</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/MrDongZhenyu">Zhenyu Dong</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://hwzhou2020.github.io/">Haowen Zhou</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://rzcao.github.io/">Ruizhi Cao</a><sup>1,*,&dagger;</sup>,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://oumengzhang.info/">Oumeng Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://biophot.caltech.edu/People">Shi Zhao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://biophot.caltech.edu/People">Panlang Lyu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://dknweb.caltech.edu/lab-members">Reinaldo Alcalde</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://biophot.caltech.edu/">Changhuei Yang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Department of Electrical Engineering, California Institute of Technology</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>2</sup>Division of Biology and Biological Engineering, California Institute of Technology</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>&dagger;</sup>Correspondence</span>
+          </div>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">Under review, 2025</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""                           
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa-solid fa-circle-notch fa-rotate-270"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=" "
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Presentation</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>             
+               <!-- Supplementary Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-solid fa-circle-notch "></i>
+                  </span>
+                  <span>Supplementary</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <!-- Principle -->
+
+    <div class="container is-max-desktop">
+      <div class="box has-text-centered">
+        <h2 class="title is-3">System overview</h2>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="./static/images/System_overview.png" alt="System_overview" class="publication-image">
+        <figcaption>
+          <strong>Fig. 1.</strong> Overview of the AFP concept.
+        </figcaption>
+      </div>
+      
+      <!-- <div class="notification is-link is-light mb-5">
+        <h2 class="title is-3 has-text-centered">Principle</h2>
+      </div> -->
+
+    </div>
+
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="max-width: 800px; margin: auto;">
+          <div class="box has-text-centered">
+            <h2 class="title is-3">Abstract</h2>
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Three-dimensional (3D) refractive index (RI) tomography offers label-free, quantitative volumetric imaging but faces limitations due to optical aberrations, limited resolution, and computational complexity inherent to existing approaches. 
+              To overcome these barriers, we propose <strong>Fourier Ptychotomography (AFP)</strong>, a new computational microscopy technique that analytically reconstructs <strong>aberration-free, complex-valued</strong> 3D RI distributions <strong>without iterative optimization or axial scanning.</strong> 
+              AFP incorporates a new concept named <strong>finite sample thickness (FST) prior</strong>, thereby simplifying the inverse scattering problem into solving linear equations. 
+              AFP consists of three sequential steps: complex-field reconstruction via the Kramers-Kronig relation, <strong>linear aberration correction</strong> using overlapping spectra, and <strong>analytic spectrum extension</strong> into the darkfield region. 
+              Unlike iterative reconstruction methods, AFP does not require parameter tuning and computationally intensive optimizations – which are slow to converge, error-prone, parameter-sensitive and non-generalizable across samples and systems. 
+            </p>
+
+            <p>  
+              We experimentally demonstrated that AFP significantly enhances image quality and resolution under various aberration conditions across a range of applications. 
+              AFP corrected aberrations associated with maximal phase difference of 2.3π, extended the synthetic numerical aperture from 0.41 to 0.99, and provided a two-fold resolution enhancement in all directions. 
+              AFP’s simplicity and robustness makes it an attractive imaging technology for quantitative 3D analysis in biological, microbial ecological, and medical studies.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simulation. -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="box has-text-centered">
+            <h2 class="title is-3">Simulation</h2>
+          </div>
+
+            <video class="publication-image" autoplay loop muted playsinline controls>
+              <source src="./static/videos/Simulation_lymphn.mp4" type="video/mp4">
+            </video>
+
+            <div class="column is-centered has-text-centered">
+              <figcaption>
+                <strong>Video 1.</strong> Simulation results with a 16-μm thickness lymph node vascular phantom. GT: Ground truth; DF: Darkfield; w/: with; w/o: without; AC: Aberration correction.
+              </figcaption>
+            </div>
+
+            <div class="column is-centered has-text-centered">
+              <img src="./static/images/Simulation_Crosssection.png" alt="Simulation_Crosssection" class="publication-image">
+              <figcaption>
+                <strong>Fig. 2.</strong> Cross-section comparisons in simulation.
+              </figcaption>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Polystyrene bead. -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="box has-text-centered">
+            <h2 class="title is-3">Polystyrene bead imaging</h2>
+          </div>
+            <div class="column is-centered has-text-centered">
+              <img src="./static/images/Polystyrene_bead.png" alt="polysterene_bead" class="publication-image">
+              <figcaption>
+                <strong>Fig. 3.</strong> Polystyrene bead reconstruction under defocus, spherical and random aberrations.
+              </figcaption>
+            </div>
+  
+        </div>
+      </div>
+    </div>
+
+    <!-- Mouse embryo imaging. -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="box has-text-centered">
+            <h2 class="title is-3">Mouse embryo imaging</h2>
+          </div>
+
+            <video class="publication-image" autoplay loop muted playsinline controls>
+              <source src="./static/videos/S1_Fixed_mouse_embryos.mp4" type="video/mp4">
+            </video>
+
+            <div class="column is-centered has-text-centered">
+              <figcaption>
+                <strong>Video 2.</strong> Label-free RI tomography of fixed mouse embryos at two-cell, four-cell, eight-cell and blasto stages. MIP: Maximum intensity projection.
+              </figcaption>
+            </div>
+
+            <video class="publication-image" autoplay loop muted playsinline controls>
+              <source src="./static/videos/S2_Live_mouse_embryos.mp4" type="video/mp4">
+            </video>
+
+            <div class="column is-centered has-text-centered">
+              <figcaption>
+                <strong>Video 3.</strong> Label-free RI tomography of live mouse embryos at four-cell and eight-cell stages.
+              </figcaption>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant root and bacteria imaging. -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="box has-text-centered">
+            <h2 class="title is-3">Wheat root and bacteria imaging</h2>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <br>
+      </p>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="subtitle is-4 has-text-weight-semibold">1. Large FOV wheat root imaging</h3>
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-full-width">
+            <div class="column is-centered has-text-centered">
+              <img src="./static/images/Root_largeFOV.png" alt="fig_root_largeFOV" class="publication-image">
+              <figcaption>
+                <strong> Fig. 4.</strong> Large volume (4.18 × 2.40 × 0.140 mm<sup>3</sup>) wheat root imaging (MIP with color-coded depth).
+              </figcaption>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="subtitle is-4 has-text-weight-semibold">2. Root hair skeletons</h3>
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-full-width">
+          <div class="column is-centered has-text-centered">
+            <img src="./static/images/Roothair_skeleton.png" alt="fig_roothair_skeleton" class="publication-image">
+            <figcaption>
+              <strong> Fig. 5.</strong> Root hair skeletons extracted from RI reconstruction (depth is color-coded).
+            </figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="subtitle is-4 has-text-weight-semibold">3. 3D Stack</h3>
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-full-width">
+          <video class="publication-image" autoplay loop muted playsinline controls>
+            <source src="./static/videos/S4_Root_LargeFOV.mp4" type="video/mp4">
+          </video>
+  
+          <div class="column is-centered has-text-centered">
+            <figcaption>
+              <strong>Video 4.</strong> 3D RI stack containing root hair, cortex, and vascular cylinder regions.
+            </figcaption>
+          </div>
+              
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="subtitle is-4 has-text-weight-semibold">4. Root-bacteria interaction</h3>
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-full-width">
+            <div class="column is-centered has-text-centered">
+              <img src="./static/images/Root_bacteria.png" alt="fig_root_bacteria" class="publication-image">
+              <figcaption>
+                <strong> Fig. 6.</strong> Root and bacteria bi-modality imaging with fluorescence (Fluo) and AFP (RI). MIP: Maximum intensity projection. AIF: All in focus. Pink arrows mark some of the bacteria locations. Scale bar: 25 μm.
+              </figcaption>
+            </div>
+      </div>
+    </div>
+
+    <!-- 3D digital pathology. -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="box has-text-centered">
+            <h2 class="title is-3">3D Digital pathology</h2>
+          </div>
+            
+            <p>
+              <br>
+            </p>
+      
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="subtitle is-4 has-text-weight-semibold">1. Complex-valued RI reconstruction</h3>
+      <div class="columns is-centered has-text-justified">
+        <div class="column is-full-width">
+          <video class="publication-image" autoplay loop muted playsinline controls>
+            <source src="./static/videos/S6_UVPathology_ComplexRI.mp4" type="video/mp4">
+          </video>
+  
+          <div class="column is-centered has-text-centered">
+            <figcaption>
+              <strong>Video 5.</strong> 20-μm thick human gastric adenocarcinoma cancer pathological slide imaging with DUV AFP. 
+              MIP rendering of RI, Absorption and the composite. 
+              RI relates to cytoplasm and extracellular structures, and Absorption relates to nuclei.
+            </figcaption>
+          </div>
+              
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="subtitle is-4 has-text-weight-semibold">2. Aberration correction for field-dependent aberration</h3>
+    </div>
+    
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+    
+        <div class="wrapper focal-slider">
+          <div class="label-left">w/o AC</div>
+          <div class="label-right">w/ AC</div> 
+          <div class="images">
+            <div class="img-A"></div>
+            <div class="img-B"></div>
+          </div>
+          <div class="slider">
+            <div class="drag-line"><span></span></div>
+            <input type="range" min="0" max="100" value="50">
+          </div>
+        </div>
+    
+        <input class="slider is-fullwidth is-large is-info mt-4"
+               id="z-slider"
+               step="1" min="1" max="14" value="1" type="range">
+        < <p class="is-size-6 mt-1">Z-plane: <span id="z-val">1</span></p> -->
+    
+      <!-- </div>
+    </div> --> 
+
+    <div class="columns is-vcentered">
+  
+      <!-- Left image column -->
+      <div class="column is-half has-text-centered">
+
+        <figure style="margin: 0;">
+          <img src="./static/images/FOV1_aberration.png" style="max-width: 100%; display: block;">
+          <figcaption>
+            <strong> Fig. 7.</strong> Field-dependent aberration in FOV 1.
+          </figcaption>
+        </figure>       
+      
+      </div>
+    
+      <!-- Right interactive column -->
+      <div class="column is-half has-text-centered">
+        
+        <div class="wrapper focal-slider">
+          <div class="label-left">w/o AC</div>
+          <div class="label-right">w/ AC</div>
+          <div class="images">
+            <div class="img-A"></div>
+            <div class="img-B"></div>
+          </div>
+          <div class="slider">
+            <div class="drag-line"><span></span></div>
+            <input type="range" min="0" max="100" value="50">
+          </div>
+        </div>
+    
+        <!-- z-slider: half-width & centered -->
+        <div style="width: 100%; display: flex; align-items: center; gap: 1.5rem;">
+          <input class="slider is-large is-info"
+                 id="z-slider"
+                 step="1" min="1" max="14" value="7" type="range">
+          <span style="white-space: nowrap;">z-plane</span>
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    <script>
+      const wrapper = document.querySelector(".focal-slider");
+      const zSlider = document.getElementById("z-slider");
+      const zVal = document.getElementById("z-val");
+      const rangeSlider = wrapper.querySelector(".slider input");
+      const imgB = wrapper.querySelector(".images .img-B");
+      const dragLine = wrapper.querySelector(".slider .drag-line");
+      
+      function loadZPlane(z) {
+        const zStr = String(z).padStart(2, '0');
+        const imgAPath = `./static/stack/FOV1/img_withAC_${zStr}.png`;
+        const imgBPath = `./static/stack/FOV1/img_woAC_${zStr}.png`;
+      
+        wrapper.querySelector(".img-A").style.backgroundImage = `url(${imgAPath})`;
+        wrapper.querySelector(".img-B").style.backgroundImage = `url(${imgBPath})`;
+        zVal.textContent = z;
+      }
+      
+      zSlider.oninput = () => {
+        loadZPlane(zSlider.value);
+      };
+      
+      rangeSlider.oninput = () => {
+        const val = rangeSlider.value;
+        dragLine.style.left = val + "%";
+        imgB.style.width = val + "%";
+      };
+      
+      // Initial load
+      loadZPlane(zSlider.value);
+    </script>
+  
+    <div class="columns is-vcentered">
+    
+      <!-- Left image column -->
+      <div class="column is-half has-text-centered">
+
+        <figure style="margin: 0;">
+          <img src="./static/images/FOV2_aberration.png" style="max-width: 100%; display: block;">
+          <figcaption>
+            <strong> Fig. 8.</strong> Field-dependent aberration in FOV 2.
+          </figcaption>
+        </figure>       
+      
+      </div>
+    
+      <!-- Right interactive column -->
+      <div class="column is-half has-text-centered">
+        
+        <div class="wrapper focal-slider-2">
+          <div class="label-left">w/o AC</div>
+          <div class="label-right">w/ AC</div>
+          <div class="images">
+            <div class="img-C"></div>
+            <div class="img-D"></div>
+          </div>
+          <div class="slider">
+            <div class="drag-line"><span></span></div>
+            <input type="range" min="0" max="100" value="50">
+          </div>
+        </div>
+    
+        <!-- z-slider: half-width & centered -->
+        <div style="width: 100%; display: flex; align-items: center; gap: 1.5rem;">
+          <input class="slider is-large is-info"
+                 id="z-slider-2"
+                 step="1" min="1" max="14" value="7" type="range">
+          <span style="white-space: nowrap;">z-plane</span>
+        </div>
+    
+      </div>
+    
+    </div>
+  
+    <script>
+      const wrapper2 = document.querySelector(".focal-slider-2");
+      const zSlider2 = document.getElementById("z-slider-2");
+      const zVal2 = document.getElementById("z-val");
+      const rangeSlider2 = wrapper2.querySelector(".slider input");
+      const img2 = wrapper2.querySelector(".images .img-D");
+      const dragLine2 = wrapper2.querySelector(".slider .drag-line");
+      
+      function loadZPlane2(z) {
+        const zStr2 = String(z).padStart(2, '0');
+        const imgCPath = `./static/stack/FOV2/img_withAC_${zStr2}.png`;
+        const imgDPath = `./static/stack/FOV2/img_woAC_${zStr2}.png`;
+      
+        wrapper2.querySelector(".img-C").style.backgroundImage = `url(${imgCPath})`;
+        wrapper2.querySelector(".img-D").style.backgroundImage = `url(${imgDPath})`;
+        zVal2.textContent = z;
+      }
+      
+      zSlider2.oninput = () => {
+        loadZPlane2(zSlider2.value);
+      };
+      
+      rangeSlider2.oninput = () => {
+        const val = rangeSlider2.value;
+        dragLine2.style.left = val + "%";
+        img2.style.width = val + "%";
+      };
+      
+      // Initial load
+      loadZPlane2(zSlider2.value);
+    </script>
+
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h3 class="title">BibTeX</h3>
+    <pre><code>
+
+    </code></pre>
+  </div>
+  <!-- <div class="container is-max-desktop content">
+    <h3 class="title">Dataset DOI</h3>
+    <pre><code>CaltechDATA
+DOI: <a href="https://doi.org/10.22002/7aer7-qhf77">https://doi.org/10.22002/7aer7-qhf77</a></code></pre>
+  </div> -->
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered" style="font-size: 10px;">
+          <p>
+            Page template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
